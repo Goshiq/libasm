@@ -6,7 +6,7 @@
 /*   By: jmogo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:13:51 by jmogo             #+#    #+#             */
-/*   Updated: 2021/04/15 20:12:14 by jmogo            ###   ########.fr       */
+/*   Updated: 2021/04/15 22:00:45 by jmogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	main(int argc, char **argv)
 {
+	(void)argc;
+	(void)argv;
+
 	char	*str = "It is a test string";
 	char	*buf = malloc(1024);
 
