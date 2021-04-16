@@ -19,6 +19,8 @@ HFILE	= libasm.h
 FLAGS	= -Wall -Wextra -Werror
 
 SRCS	= ft_read.s\
+		  ft_strcmp.s\
+		  ft_strcpy.s\
 		  ft_strlen.s\
 		  ft_write.s\
 
