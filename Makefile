@@ -10,6 +10,8 @@ LIB		= ar rcs $(NAME)
 
 DIR		= ./srcs/
 
+EXEC	= check
+
 HEADER	= ./includes/
 
 HFILE	= libasm.h
@@ -22,6 +24,7 @@ SRCS	= ft_read.s\
 
 OBJ_DIR	= ./objects/
 
+OBJWDIR	= $(addprefix $(OBJ_DIR), $(OBJS))
 
 vpath %.h	$(HEADER)
 vpath %.o	$(OBJ_DIR)
@@ -35,21 +38,21 @@ OBJS		= $(SRCS:.s=.o)
 all:		$(NAME) | $(OBJ_DIR)
 
 $(NAME):	$(OBJS)
-			$(LIB) $(OBJ_DIR)$<
+			$(LIB) $(OBJWDIR)
 
 $(OBJ_DIR):
 			mkdir -p $@
 
-check:		$(NAME)
-			$(CC) $(FLAGS) -L. -lasm main.c -I$(HEADER) -o check
+$(EXEC):	$(NAME)
+			$(CC) $(FLAGS) -L. -lasm main.c -I$(HEADER) -o $(EXEC)
 
 clean:
 			rm -rf $(OBJ_DIR)
 
 fclean:		clean
 			rm -f $(NAME)
-			rm -f check
+			rm -f $(EXEC)
 
 re:			fclean all
 
-.PHONY:		all check clean fclean re
+.PHONY:		all $(EXEC) clean fclean re
