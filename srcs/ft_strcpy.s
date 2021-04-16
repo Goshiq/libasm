@@ -13,5 +13,6 @@ _loop:
 		inc	rdi
 		jmp	_loop
 _exit:
-		pop	rdi
+		mov	byte [rdi], 0
+		pop		rax
 		ret

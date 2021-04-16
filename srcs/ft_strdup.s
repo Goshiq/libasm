@@ -1,23 +1,23 @@
 extern	_malloc
-extern	___error
 extern	_ft_strlen
+extern	_ft_strcpy
 
 global	_ft_strdup
 
 section	.text
 
 _ft_strdup:
-
-_loop:
+		push	rdi
 		call	_ft_strlen
-		mov		rcx, rax
+		add		rax, 1
+		mov		rdi, rax
 		call	_malloc
-		test	rax, rax
-		jz		_error
-
-
+		cmp		rax, 0
+		je		_error
+		pop		rsi
+		mov		rdi, rax
+		call	_ft_strcpy
 		ret
-
 _error:
 		xor		rax, rax
 		ret

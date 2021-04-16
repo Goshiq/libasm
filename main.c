@@ -6,7 +6,7 @@
 /*   By: jmogo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:13:51 by jmogo             #+#    #+#             */
-/*   Updated: 2021/04/16 11:34:20 by jmogo            ###   ########.fr       */
+/*   Updated: 2021/04/16 13:25:45 by jmogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	char	*buf = malloc(1024);
 	char	*buf2 = malloc(1024);
 	char	*tocmp = "TTT";
+	char	*to_dup;
 
 	printf("Checking read: \n");
 	ft_read(0, buf, 32);
@@ -34,6 +35,7 @@ int	main(int argc, char **argv)
 	printf("\n===\n");
 	strcpy(buf2, buf);
 	printf("OS strcpy result: %s\n", buf2);
+	strcpy(buf2, "");
 	ft_strcpy(buf2, buf);
 	printf("My strcpy result: %s\n", buf2);
 	printf("===\n");
@@ -43,9 +45,9 @@ int	main(int argc, char **argv)
 	printf("Now we compare:\n%s\n---vs---\n%s\n", buf, tocmp);
 	printf("OS strcmp: %d\n", strcmp(buf, tocmp));
 	printf("My strcmp: %d\n", ft_strcmp(buf, tocmp));
-
-	printf("%p\n", ft_strdup(buf));
-
-	free(buf);
-	free(buf2);
+	printf("===\n");
+	printf("FT_STRDUP:\n");
+	printf("String is: %s\t%p\n", tocmp, tocmp);
+	to_dup = ft_strdup(tocmp);
+	printf("String is: %s\t%p\n", to_dup, to_dup);
 }
