@@ -8,7 +8,7 @@ _loop:
 		mov	al, byte [rsi]
 		mov	bl, byte [rdi]
 		sub	bl, al
-		movzx	rax, bl
+		movsx	rax, bl
 		cmp	bl, 0
 		jne	_exit
 		cmp	byte [rdi], 0

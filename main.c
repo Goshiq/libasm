@@ -6,7 +6,7 @@
 /*   By: jmogo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:13:51 by jmogo             #+#    #+#             */
-/*   Updated: 2021/04/16 11:04:43 by jmogo            ###   ########.fr       */
+/*   Updated: 2021/04/16 11:34:20 by jmogo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int	main(int argc, char **argv)
 	printf("Now we compare:\n%s\n---vs---\n%s\n", buf, tocmp);
 	printf("OS strcmp: %d\n", strcmp(buf, tocmp));
 	printf("My strcmp: %d\n", ft_strcmp(buf, tocmp));
+
+	printf("%p\n", ft_strdup(buf));
+
 	free(buf);
 	free(buf2);
 }
