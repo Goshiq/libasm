@@ -16,13 +16,12 @@ HFILE	= libasm.h
 
 FLAGS	= -Wall -Wextra -Werror
 
-SRCS	= ft_write.s\
-		  ft_read.s\
-		  ft_strlen.s
+SRCS	= ft_read.s\
+		  ft_strlen.s\
+		  ft_write.s\
 
 OBJ_DIR	= ./objects/
 
-#OBJS_W_DIR	= $(addprefix $(OBJ_DIR), $(OBJS))
 
 vpath %.h	$(HEADER)
 vpath %.o	$(OBJ_DIR)
@@ -38,8 +37,6 @@ all:		$(NAME) | $(OBJ_DIR)
 $(NAME):	$(OBJS)
 			$(LIB) $(OBJ_DIR)$<
 
-			#$(LIB) $(OBJS_W_DIR)
-
 $(OBJ_DIR):
 			mkdir -p $@
 
@@ -51,6 +48,7 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
+			rm -f check
 
 re:			fclean all
 
