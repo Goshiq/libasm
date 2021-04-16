@@ -56,6 +56,7 @@ fclean:		clean
 			rm -f $(NAME)
 			rm -f $(EXEC)
 
-re:			fclean all
+re:			fclean
+			make $(NAME)
 
 .PHONY:		all $(EXEC) clean fclean re
